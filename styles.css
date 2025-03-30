@@ -1,0 +1,110 @@
+body {
+    background: linear-gradient(to bottom, #0b0d21, #1a1d4a, #4a2b6c);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    overflow: hidden;
+}
+
+.form-container {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 650px;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+/* Input Fields */
+.form-control {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 10px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.link-danger {
+    color: #462A69 !important;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out, text-decoration-color 0.3s ease-in-out;
+}
+
+.btn {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+}
+
+.btn-dark {
+    color: white;
+    background: linear-gradient(135deg, #0E102A, #472A6A);
+    border-radius: 50px;
+    box-shadow: 0px 4px 10px rgba(71, 42, 106, 0.6);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-dark:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #472A6A, #0E102A);
+    box-shadow: 0px 6px 14px rgba(71, 42, 106, 0.8);
+}
+
+.btn-dark:active {
+    transform: scale(0.95);
+    box-shadow: 0px 2px 6px rgba(71, 42, 106, 0.4);
+}
+
+#subbtn {
+    background: linear-gradient(135deg, #4285F4, #0F9D58);
+    color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#subbtn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #3b5998, #192f6a);
+    box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.4);
+}
+
+#subbtn:active {
+    transform: scale(0.95);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Pulsing Animation */
+@keyframes pulse {
+    0% {
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    50% {
+        box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4);
+    }
+    100% {
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    }
+}
+
+#subbtn:hover {
+    animation: pulse 1.5s infinite;
+}
