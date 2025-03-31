@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    
     const form = document.querySelector("form");
 
     if (form) {
@@ -60,26 +59,24 @@ document.addEventListener("DOMContentLoaded", function () {
     const password = document.getElementById('password');
     const confirmPassword = document.getElementById('confirmPassword');
 
-    password.addEventListener('input', checkPasswordsMatch);
-    confirmPassword.addEventListener('input', checkPasswordsMatch);
+    if (password && confirmPassword) {
+        password.addEventListener('input', checkPasswordsMatch);
+        confirmPassword.addEventListener('input', checkPasswordsMatch);
+    }
 
     function checkPasswordsMatch() {
-        const password = document.getElementById('password');
-        const confirmPassword = document.getElementById('confirmPassword');
-
         if (password.value && confirmPassword.value && password.value === confirmPassword.value) {
             confirmPassword.classList.remove("is-invalid");
             confirmPassword.classList.add("is-valid");
-            closeAlert(); // alert close
+            closeAlert(); // Close alert
         } else {
             confirmPassword.classList.remove("is-valid");
             confirmPassword.classList.add("is-invalid");
-            showAlert("Password fields do not match!"); // alert
+            showAlert("Password fields do not match!"); // Show alert
         }
     }
 
-
-    // auto validation stuff
+    // Auto-validation
     const allInputs = document.querySelectorAll("input");
     allInputs.forEach(input => {
         input.addEventListener("input", function () {
@@ -94,10 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    initializeStarryBackground();
-});
-
+// Initialize starry background
 function initializeStarryBackground() {
     const canvas = document.getElementById("starsCanvas");
     if (!canvas) return; 
@@ -144,6 +138,9 @@ function initializeStarryBackground() {
     window.addEventListener("resize", resizeCanvas);
 }
 
+document.addEventListener("DOMContentLoaded", initializeStarryBackground);
+
+// Logout function
 function logout() {
     window.location.href = "sign_in.html";
 }

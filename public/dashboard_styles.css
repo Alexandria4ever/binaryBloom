@@ -8,7 +8,7 @@ body {
     flex-direction: column;
     text-align: center;
     height: 200%;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; }
 
 canvas {
     position: fixed;
@@ -110,5 +110,4 @@ footer:hover {
 .card p {
     font-size: 14px;
     opacity: 0.9;
-}
 }
